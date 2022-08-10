@@ -1,5 +1,6 @@
 # Golang Website Development
-## Mengunduh Repository
+This application is made with the Golang programming language
 
-Unduh repository ke dalam komputer menggunakan perintah `git clone`. Url
-repository dapat dilihat di dalam repository yang diinginkan.
+## Framework
+- Gin Web Framework
+- Gorm
