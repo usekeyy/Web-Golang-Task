@@ -1,0 +1,27 @@
+.add-task {
+  padding-top: 1rem;
+}
+
+.content {
+  background-color: white;
+  border: 1px solid gainsboro;
+  border-radius: 0.25rem;
+  padding: 1rem;
+}
+
+.content h4 {
+    margin-bottom: 1rem;
+}
+
+.content form > * + * {
+  margin-top: 1rem;
+}
+
+.content form > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.content form > div > * + * {
+  margin-top: 0.25rem;
+}

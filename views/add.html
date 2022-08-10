@@ -1,0 +1,56 @@
+{{ define "add" }}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Task</title>
+    <link rel="stylesheet" href="../assets/css/add.css" />
+    <link rel="stylesheet" href="../assets/css/base.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1 class="heading">Golang Task</h1>
+      <section class="add-task">
+        <div class="header">
+          <h3 class="title">Create Task</h3>
+          <div class="tools">
+            <button onclick="window.location.href='/task'">❌ Cancel</button>
+          </div>
+        </div>
+        <div class="content">
+          <h4>Please fill form below.</h4>
+          <form method="post">
+            <div>
+              <label for="task">🎯 Task</label>
+              <input
+                type="text"
+                name="task_detail"
+                id="task"
+                placeholder="Add task..."
+              />
+            </div>
+            <div>
+              <label for="assigne">👷 Assigne</label>
+              <input
+                type="text"
+                name="assigne"
+                id="assigne"
+                placeholder="Add name..."
+              />
+            </div>
+            <div>
+              <label for="deadline">📅 Deadline</label>
+              <input type="date" name="deadline" id="deadline" />
+            </div>
+            <div>
+              <input type="submit" value="✅ Submit" />
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
+{{ end }}

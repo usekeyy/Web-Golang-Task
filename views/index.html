@@ -1,0 +1,66 @@
+{{ define "index" }}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ .title }}</title>
+    <link rel="stylesheet" href="../assets/css/index.css" />
+    <link rel="stylesheet" href="../assets/css/base.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1 class="heading">Golang Task</h1>
+      <section class="task-list">
+        <div class="header">
+          <h3 class="title">Task List</h3>
+          <div class="tools">
+            <div class="search">
+              <span>🔍</span>
+              <input
+                type="text"
+                name="search"
+                id="search"
+                placeholder="This is just for display..."
+              />
+            </div>
+            <button class="primary" onclick="window.location.href='/task/add'">
+              ➕ Create
+            </button>
+          </div>
+        </div>
+        <div class="content">
+          <table>
+            <thead>
+              <tr>
+                <th>🎯 Task</th>
+                <th>👷 Assigne</th>
+                <th>📅 Deadline</th>
+                <th>📝 Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{range $key, $value := .task}}
+              <tr>
+                <td>{{$value.Task_detail}}</td>
+                <td>{{$value.Assigne}}</td>
+                <td>{{$value.Deadline}}</td>
+                <td>
+                  {{ if $value.IsDone }}
+                  <button onclick="window.location.href='/task/{{$value.ID}}/done'">✅ Done</button>
+                  {{ else }}
+                  <button onclick="window.location.href='/task/{{$value.ID}}/done'" class="secondary">☑️ Mark as done</button>
+                  {{ end }}
+                  <button onclick="window.location.href='/task/update/{{$value.ID}}'" class="accent">🖊️ Edit</button>
+                </td>
+              </tr>
+              {{ end }}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
+{{ end }}

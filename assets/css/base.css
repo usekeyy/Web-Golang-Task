@@ -1,0 +1,110 @@
+/* reset */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline-color: crimson;
+}
+
+/* variabels */
+:root {
+  --clr-primary: skyblue;
+  --clr-secondary: greenyellow;
+  --clr-accent: gold;
+}
+
+/* contents */
+body {
+  line-height: 1.5rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  background-color: aliceblue;
+}
+
+table,
+td,
+th,
+tr {
+  border-collapse: collapse;
+  border: 1px solid gainsboro;
+}
+
+table {
+  width: 100%;
+}
+
+tr td:last-child,
+tr th:last-child {
+  width: 1%;
+  white-space: nowrap;
+}
+
+td {
+  padding: 0.5rem 0.75rem;
+  background-color: white;
+}
+
+th {
+  padding: 0.25rem 0;
+  background-color: var(--clr-primary);
+}
+
+button {
+  border: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  background-color: darkgray;
+  cursor: pointer;
+}
+
+button.primary {
+  background-color: var(--clr-primary);
+}
+
+button.secondary {
+  background-color: var(--clr-secondary);
+}
+
+button.accent {
+  background-color: var(--clr-accent);
+}
+
+input {
+  padding: 0.35rem 0.75rem;
+  border-radius: 0.35rem;
+  border: 2px solid gainsboro;
+}
+
+input[type="submit"] {
+  background-color: var(--clr-secondary);
+  border: none;
+  padding: 0.75rem 0;
+  cursor: pointer;
+}
+
+/* contents */
+.heading {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.container {
+  max-width: 1080px;
+  margin: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.tools {
+  display: flex;
+  align-items: center;
+}
+
+.tools > * + * {
+  margin-left: 1rem;
+}
