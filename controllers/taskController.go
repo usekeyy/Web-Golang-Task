@@ -11,6 +11,11 @@ import (
 
 type TaskController struct{}
 
+func (TaskController) Root(c *gin.Context) {
+
+	c.Redirect(http.StatusFound, "/task")
+}
+
 func (TaskController) GetAll(c *gin.Context) {
 	db := database.Instance()
 
@@ -65,9 +70,7 @@ func (TaskController) ViewUpdate(c *gin.Context) {
 			"title": "Golang Task - Update Form",
 			"task":  task,
 		})
-
 	}
-
 }
 
 func (TaskController) Store(c *gin.Context) {
@@ -127,5 +130,18 @@ func (TaskController) Done(c *gin.Context) {
 }
 
 func (TaskController) Delete(c *gin.Context) {
+	db := database.Instance()
+	id, _ := strconv.Atoi(c.Param("id"))
 
+	var task models.Task
+	result := db.Find(&task, id)
+
+	if result.RowsAffected == 0 {
+		c.JSON(http.StatusNotFound, gin.H{
+			"message": "Data not found!",
+		})
+	} else {
+		db.Delete(&task)
+	}
+	c.Redirect(http.StatusFound, "/task")
 }

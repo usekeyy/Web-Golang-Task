@@ -53,6 +53,7 @@
                   <button onclick="window.location.href='/task/{{$value.ID}}/done'" class="secondary">☑️ Mark as done</button>
                   {{ end }}
                   <button onclick="window.location.href='/task/update/{{$value.ID}}'" class="accent">🖊️ Edit</button>
+                  <button onclick="window.location.href='/task/delete/{{$value.ID}}'" class="delete">🗑️ Delete</button>
                 </td>
               </tr>
               {{ end }}

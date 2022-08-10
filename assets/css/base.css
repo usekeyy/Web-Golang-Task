@@ -11,8 +11,9 @@
 /* variabels */
 :root {
   --clr-primary: skyblue;
-  --clr-secondary: greenyellow;
+  --clr-secondary: rgb(113, 255, 47);
   --clr-accent: gold;
+  --clr-red: rgb(252, 39, 39);
 }
 
 /* contents */
@@ -68,6 +69,10 @@ button.secondary {
 
 button.accent {
   background-color: var(--clr-accent);
+}
+
+button.delete {
+  background-color: var(--clr-red);
 }
 
 input {

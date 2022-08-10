@@ -9,6 +9,8 @@ import (
 func Routes(r *gin.Engine) {
 	taskController := controllers.TaskController{}
 
+	r.GET("/", taskController.Root)
+
 	r.GET("/task", taskController.GetAll)
 
 	r.GET("/task/:id", taskController.GetDetail)
@@ -23,6 +25,6 @@ func Routes(r *gin.Engine) {
 
 	r.GET("/task/:id/done", taskController.Done)
 
-	r.DELETE("/task/:id", taskController.Delete)
+	r.GET("/task/delete/:id", taskController.Delete)
 
 }
